@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
-import LeafletMap from './LeafletMap';
-import {DataModel} from "../models/dataModel";
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import LeafletMap from "./LeafletMap";
+import { WorkerCommunicationGet } from "../models/WorkerCommunicationGet";
 
 function App() {
-
-  const [message, setMessage] = useState<DataModel>();
-  const onMessage = (event :any) => setMessage(event.data);
+  const [dataFromWorker, setDataFromWorker] =
+    useState<WorkerCommunicationGet>();
+  const [workerState, setWorkerState] = useState<any>();
+  const onMessage = (event: any) => setDataFromWorker(event.data);
 
   useEffect(() => {
     const worker = new Worker("worker.js");
     worker.addEventListener("message", onMessage);
+    setWorkerState(worker);
     return () => {
       worker.removeEventListener("error", onMessage);
       worker.terminate();
@@ -19,9 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <LeafletMap pinsData={message}/>
-
-      {message?.lastUpdate}
+      <LeafletMap workerData={dataFromWorker} worker={workerState} />
     </div>
   );
 }
