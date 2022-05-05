@@ -84,7 +84,6 @@ function tempVehicles() {
 self.addEventListener(
   "message",
   function (e) {
-    console.log(e.data);
     if (e.data.status === 0) {
       stop();
     } else if (e.data.status === 1 && dataFromApp.status === 0) {
@@ -101,7 +100,6 @@ self.addEventListener(
 );
 
 function movementLogic() {
-  console.log(step);
   //fetch new bus data
   if (step === 15) {
     getData();
