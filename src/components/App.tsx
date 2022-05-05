@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import LeafletMap from "./LeafletMap";
+import LeafletMap from "./LeafletMap/LeafletMap";
 import { WorkerCommunicationGet } from "../models/WorkerCommunicationGet";
+import Container from "@mui/material/Container";
 
 function App() {
   const [dataFromWorker, setDataFromWorker] =
@@ -20,9 +21,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <Container maxWidth="xl" className="App">
       <LeafletMap workerData={dataFromWorker} worker={workerState} />
-    </div>
+    </Container>
   );
 }
 

@@ -1,0 +1,14 @@
+.status {
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    padding: 0.3rem 2rem;
+    margin: 0 auto;
+
+    h4 {
+      margin-right: 2rem;
+    }
+  }
+}

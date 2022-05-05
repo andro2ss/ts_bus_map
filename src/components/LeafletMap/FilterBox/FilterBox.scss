@@ -1,19 +1,18 @@
-.status {
-  &__box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    h4 {
-      margin: 1rem;
-    }
-  }
-}
-
 .filter {
+
   &__box {
     display: flex;
     flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: 1rem 0 0 0;
+    width: fit-content;
+    margin: 2rem auto 1rem auto;
+
+    button{
+      max-width: fit-content;
+      padding: 0.5rem 1rem;
+    }
 
     h3{
       margin: 0;
@@ -37,14 +36,11 @@
         font-size: 1rem;
         margin: 0.5rem;
       }
-
-      button{
-        margin: 0.5rem;
-      }
     }
   }
-}
 
-.hide {
-  display: none;
+  &__btn{
+    margin: 0 auto 1rem auto !important;
+    min-width: 200px !important;
+  }
 }
