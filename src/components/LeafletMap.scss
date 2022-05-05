@@ -1,0 +1,50 @@
+.status {
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h4 {
+      margin: 1rem;
+    }
+  }
+}
+
+.filter {
+  &__box {
+    display: flex;
+    flex-direction: column;
+
+    h3{
+      margin: 0;
+    }
+
+    h4{
+      margin: 0;
+    }
+
+    .boxes{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+
+      div{
+        margin: 1rem;
+      }
+
+      h5{
+        font-size: 1rem;
+        margin: 0.5rem;
+      }
+
+      button{
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
