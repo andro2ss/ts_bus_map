@@ -3,6 +3,7 @@ import "./App.css";
 import LeafletMap from "./LeafletMap/LeafletMap";
 import { WorkerCommunicationGet } from "../models/WorkerCommunicationGet";
 import Container from "@mui/material/Container";
+import FooterAB from "./footer/FooterAB";
 
 function App() {
   const [dataFromWorker, setDataFromWorker] =
@@ -23,6 +24,7 @@ function App() {
   return (
     <Container maxWidth="xl" className="App">
       <LeafletMap workerData={dataFromWorker} worker={workerState} />
+      <FooterAB githubLink="https://github.com/andro2ss/ts_bus_map" />
     </Container>
   );
 }

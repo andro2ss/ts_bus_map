@@ -9,7 +9,14 @@ import Button from "@mui/material/Button";
 function StatusBox({ workerData, worker }: LeafletMapInterface) {
   return (
     <Paper elevation={3} className="status__box">
-      <h4>Map status: {workerData?.status === 1 ? "Running" : "Stopped"}</h4>
+      <h4>
+        Map status:{" "}
+        {workerData?.status === 1 ? (
+          <span style={{ color: "green" }}>Running</span>
+        ) : (
+          <span style={{ color: "red" }}>Stopped</span>
+        )}
+      </h4>
       {workerData?.status === 1 ? (
         <Button
           variant="outlined"

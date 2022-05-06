@@ -4,6 +4,8 @@ import { Vehicle } from "../../../../models/dataModel";
 import { FilterBoxInterface } from "../../../../models/FilterBoxInterface";
 
 function BoxDirection({ workerData }: FilterBoxInterface) {
+  // @ts-ignore
+  // @ts-ignore
   return (
     <div
       className="    margin-bottom: 1rem;
@@ -24,7 +26,7 @@ box__direction"
           ? "Show"
           : "Hide"}
       </Button>
-      <div id="directionContainer" className="hide">
+      <div id="directionContainer" className="box__checkbox hide">
         {workerData?.data
           ? workerData.data?.vehicles
               .filter((item, index, self) => {
@@ -53,6 +55,14 @@ box__direction"
                 );
               })
           : ""}
+        {workerData &&
+        workerData.data.vehicles.filter((item, index, self) => {
+          return (
+            index === self.findIndex((t) => t.direction === item.direction)
+          );
+        }).length > 0
+          ? ""
+          : "Empty"}
       </div>
     </div>
   );

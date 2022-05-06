@@ -21,7 +21,7 @@ function BoxDirection({ workerData }: FilterBoxInterface) {
           ? "Show"
           : "Hide"}
       </Button>
-      <div id="vehicleCodeContainer" className="hide">
+      <div id="vehicleCodeContainer" className="box__checkbox hide">
         {workerData?.data
           ? workerData.data?.vehicles
               .sort((a, b) => {
@@ -44,7 +44,8 @@ function BoxDirection({ workerData }: FilterBoxInterface) {
                 );
               })
           : ""}
-      </div>{" "}
+        {workerData && workerData.data.vehicles.length > 0 ? "" : "Empty"}
+      </div>
     </div>
   );
 }

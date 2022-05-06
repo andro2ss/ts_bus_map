@@ -21,7 +21,7 @@ function BoxHeadsign({ workerData }: FilterBoxInterface) {
           ? "Show"
           : "Hide"}
       </Button>
-      <div id="headsignContainer" className="hide">
+      <div id="headsignContainer" className="box__checkbox hide">
         {workerData?.data
           ? workerData.data?.vehicles
               .filter((item, index, self) => {
@@ -49,6 +49,12 @@ function BoxHeadsign({ workerData }: FilterBoxInterface) {
                 );
               })
           : ""}
+        {workerData &&
+        workerData.data.vehicles.filter((item, index, self) => {
+          return index === self.findIndex((t) => t.headsign === item.headsign);
+        }).length > 0
+          ? ""
+          : "Empty"}
       </div>
     </div>
   );
