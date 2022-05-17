@@ -17,8 +17,9 @@ Web application that retrieves bus position data from the city of Gdańsk. These
 * SCSS
 * Web Worker
 * Web Services
-* Rest
-* Firestore / Firebase
+* REST
+* Leaflet 
+* Firebase
 
 ## Setup
 To run this project, clone repo and install it locally using npm:
